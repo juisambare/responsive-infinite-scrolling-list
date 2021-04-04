@@ -1,0 +1,28 @@
+{
+    "customers" : [
+        {
+            "imageURL" : "./../../../static/michael.jpg",
+            "name" : "Michael",
+            "contact" : "9999999999",
+            "city" : "Mumbai"
+        },
+        {
+            "imageURL" : "./../../../static/dan.jpg",
+            "name" : "Dan",
+            "contact" : "8888888888",
+            "city" : "Delhi"
+        },
+        {
+            "imageURL" : "./../../../static/rose.jpg",
+            "name" : "Rose",
+            "contact" : "7777777777",
+            "city" : "Kolkata"
+        },
+        {
+            "imageURL" : "./../../../static/joseph.jpg",
+            "name" : "Joseph",
+            "contact" : "6666666666",
+            "city" : "Pune"
+        }
+    ]
+}

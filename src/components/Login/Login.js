@@ -2,12 +2,13 @@ import React, { createRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-  loginWrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+  submitButton: {
+    marginTop: '20px',
+    color: 'white',
+    backgroundColor: 'green',
   },
 }));
 
@@ -15,6 +16,7 @@ export default function Login({ setToken }) {
   const classes = useStyles();
   const username = createRef();
   const password = createRef();
+  const history = useHistory();
 
   async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
@@ -33,6 +35,7 @@ export default function Login({ setToken }) {
       password: password.current.value,
     });
     setToken(token);
+    history.push('/home');
   };
   return (
     <Grid container direction="column" justify="center" alignItems="center">
@@ -63,7 +66,11 @@ export default function Login({ setToken }) {
             alignItems="center"
           >
             <Grid item>
-              <input type="submit" value="Submit" />
+              <input
+                type="submit"
+                value="Submit"
+                className={classes.submitButton}
+              />
             </Grid>
           </Grid>
         </form>
